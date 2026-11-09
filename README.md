@@ -24,3 +24,35 @@
     ```bash
     git clone https://github.com/olgatazkorob7-png/ai-chef-assistant.git
     cd ai-chef-assistant
+Установите зависимости:
+Убедитесь, что у вас установлен Python. Затем выполните:
+
+bash
+pip install fastapi uvicorn openai requests python-multipartНастройте переменные окружения:
+Создайте файл .env в корне проекта и добавьте ваш API-ключ OpenAI:
+
+env
+OPENAI_API_KEY=sk-ваш_длинный_ключ
+(Если вы используете сторонний маршрутизатор, например Kodik, добавьте также OPENAI_BASE_URL=https://api.kodikrouter.ru/v1)
+
+Запустите сервер:
+
+bash
+uvicorn main:app --reload
+Проверьте работу:
+Откройте в браузере интерактивную документацию API: http://localhost:8000/docs
+
+Основные эндпоинты
+POST /api/chat — основной эндпоинт для общения. Принимает session_id, текст сообщения и (опционально) изображение. Возвращает ответ ассистента, список вариантов и изображение блюда.
+
+POST /api/tts — принимает текст и возвращает аудиофайл с озвучкой.
+
+Автор
+Ольга Тяжкороб
+
+GitHub
+
+Портфолио
+
+
+
